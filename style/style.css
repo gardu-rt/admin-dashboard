@@ -35,37 +35,50 @@ svg {
   fill: var(--text-primary);
 }
 
+.container {
+  display: grid;
+  grid-template-columns: clamp(180px, 50%, 275px) 1fr;
+  grid-template-rows: 68px 80px 1fr;
+  min-height: 100vh;
+}
+
 .header {
+  grid-area: 1/1/2/3;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 64px;
+  padding-left: 10px;
   background-color: var(--surface);
   color: var(--text-primary);
 }
 
 .header-logo {
+  flex: 1;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 5%;
   font-size: 32px;
   font-weight: bold;
 }
 
-.header-logo > #logo {
+#logo, #profile-icon {
   width: 48px;
+  min-width: 48px;
 }
 
 .search-bar {
+  flex: 2;
   display: flex;
   align-items: center;
-  gap: 16px;
+  padding: 0 8px;
+  gap: 3%;
 }
 
 .search-bar > input {
-  width: 550px;
+  width: 80%;
   padding: 8px 16px; 
   background-color: var(--bg-main);
   border: 1px solid var(--border);
@@ -77,16 +90,40 @@ svg {
   border: 1px solid var(--accent);
 }
 
-#search-icon, #bell-icon {
+#search-icon, #bell-icon, #home, #profile, #messages, #history, #tasks, #communities, #settings, #support, #privacy {
   width: 24px;
+  min-width: 24px;
 }
 
 .profile {
+  flex: 1;
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 10%;
+  width: 100%;
 }
 
-#profile-icon {
-  width: 48px;
+.sidebar {
+  grid-area: 2/1/4/2;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  padding: 50px 16px;
+  background-color: var(--surface);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar li a{
+  display: flex;
+  align-items: center;
+  gap: 10%;
+  text-decoration: none;
+  color: var(--text-primary);
 }
