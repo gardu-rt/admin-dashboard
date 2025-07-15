@@ -38,7 +38,7 @@ svg {
 .container {
   display: grid;
   grid-template-columns: clamp(180px, 50%, 275px) 1fr;
-  grid-template-rows: 68px 80px 1fr;
+  grid-template-rows: 68px 120px 1fr;
   min-height: 100vh;
 }
 
@@ -47,10 +47,7 @@ svg {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 64px;
-  padding-left: 10px;
+  padding: 10px;
   background-color: var(--surface);
   color: var(--text-primary);
 }
@@ -78,7 +75,7 @@ svg {
 }
 
 .search-bar > input {
-  width: 80%;
+  width: 85%;
   padding: 8px 16px; 
   background-color: var(--bg-main);
   border: 1px solid var(--border);
@@ -98,9 +95,11 @@ svg {
 .profile {
   flex: 1;
   display: flex;
-  align-items: center;
+  flex-direction: row-reverse;
   gap: 10%;
-  width: 100%;
+  align-items: center;
+  padding-right: 48px;
+  font-weight: 500;
 }
 
 .sidebar {
@@ -114,7 +113,7 @@ svg {
   font-weight: bold;
 }
 
-ul {
+.sidebar ul {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -126,4 +125,56 @@ ul {
   gap: 10%;
   text-decoration: none;
   color: var(--text-primary);
+}
+
+.menu {
+  grid-area: 2/2/3/3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 16px 16px 60px;
+  background-color: var(--surface);
+  color: var(--text-primary);
+}
+
+.menu #profile-icon {
+  width: 75px;
+  min-width: 75px
+}
+
+.menu > .my-profile {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  gap: 2%;
+}
+
+.menu p {
+  font-weight: bold;
+  padding: 5px;
+}
+
+.greet p:first-child {
+  font-size: 14px;
+}
+
+.greet p + p {
+  font-size: 22px;
+}
+
+.menu-list {
+  flex: 1;
+  display: flex;
+  gap: 10%;
+  padding-right: 32px;
+}
+
+.menu-list button {
+  width: 120px;
+  padding: 10px 0;
+  border: none;
+  border-radius: 18px;
+  background-color: var(--accent);
+  color: var(--text-primary);
+  font-weight: 600;
 }
